@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    IBOutlet UILabel *label;
+    BOOL startInput;
+    float currentValue;
+    int operation;
+}
+@property (retain, nonatomic)IBOutlet UILabel *label;
+-(IBAction)numberButtonPressed:(id)sender;
+-(IBAction)clearButtonPressed:(id)senser;
+-(IBAction)equalButtonPressed:(id)sender;
+-(IBAction)optionButtonPressed:(id)sender;
 @end
