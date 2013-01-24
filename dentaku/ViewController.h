@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController // 変数の定義。数字計算のfloat,演算子用のoperation
 {
-    IBOutlet UILabel *label;
     BOOL startInput;
     float currentValue;
     int operation;
 }
-@property (retain, nonatomic)IBOutlet UILabel *label;
--(IBAction)numberButtonPressed:(id)sender;
+@property(nonatomic,retain) UILabel *label; // メソッド追加のためにpropertyを定義。並列処理回避のnonatomic
+
+-(IBAction)numberButtonPressed:(id)sender;  // 各セクションの定義。数字、clear、演算子
 -(IBAction)clearButtonPressed:(id)senser;
 -(IBAction)equalButtonPressed:(id)sender;
 -(IBAction)optionButtonPressed:(id)sender;

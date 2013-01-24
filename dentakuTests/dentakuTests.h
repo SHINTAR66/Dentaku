@@ -7,7 +7,12 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "ViewController.h"
 
-@interface dentakuTests : SenTestCase
+@interface dentakuTests : SenTestCase{
+    ViewController *viewController;
+
+}
+
 
 @end
