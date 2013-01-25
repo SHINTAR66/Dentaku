@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 
-
 @implementation ViewController
 
 @synthesize label; // labelの呼び出し
@@ -20,13 +19,19 @@
 }
 
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+
+
 // 数字や.が押されたときtagに応じた数字をlabelに表示するセクション
 
 - (IBAction)numberButtonPressed:(id)sender
 {
     UIButton *b = (UIButton *)sender;
     if(startInput){
-        if(b.tag == 0)return;
         label.text = [NSString stringWithFormat:@"%d", b.tag];
         startInput = NO;
         if(b.tag == 10){
@@ -39,6 +44,7 @@
             label.text = [NSString stringWithFormat:@"%@%d", label.text, b.tag];
         }
     }
+
 }
 
 
@@ -57,6 +63,18 @@
 
 
 
+// 演算子ボタンを適用するセクション
+
+- (IBAction)optionButtonPressed:(id)sender
+{
+    UIButton *b = (UIButton *)sender;
+    currentValue = [label.text floatValue];
+    operation = b.tag;
+    startInput = YES;
+}
+
+
+
 
 
 //　計算を行う。operation=0はclearボタンのこととしてほかの各演算子を小数点にも対応できるようにfloat型で呼び出す。
@@ -65,7 +83,7 @@
 - (IBAction)equalButtonPressed:(id)sender
 {
     if(operation == 0){
-        return;
+        currentValue = [label.text floatValue];
     }else if(operation == 1){
         currentValue += [label.text floatValue];
     }else if(operation == 2){
@@ -81,23 +99,8 @@
 }
 
 
-//
 
 
-
-
-
-
-
-// 演算子ボタンを適用するセクション
-
-- (IBAction)optionButtonPressed:(id)sender
-{
-    UIButton *b = (UIButton *)sender;
-    currentValue = [label.text floatValue];
-    operation = b.tag;
-    startInput = YES;
-}
 
 
 @end

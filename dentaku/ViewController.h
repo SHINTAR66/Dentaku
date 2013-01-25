@@ -14,10 +14,12 @@
     float currentValue;
     int operation;
 }
-@property(nonatomic,retain) UILabel *label; // メソッド追加のためにpropertyを定義。並列処理回避のnonatomic
+
+@property(nonatomic,retain) UILabel *label; // メソッド追加並列処理回避のnonatomic
 
 -(IBAction)numberButtonPressed:(id)sender;  // 各セクションの定義。数字、clear、演算子
 -(IBAction)clearButtonPressed:(id)senser;
 -(IBAction)equalButtonPressed:(id)sender;
 -(IBAction)optionButtonPressed:(id)sender;
+
 @end

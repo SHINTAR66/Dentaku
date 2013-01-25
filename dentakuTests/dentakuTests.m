@@ -118,7 +118,7 @@
     [viewController equalButtonPressed:button];
     [viewController optionButtonPressed:button];
     
- 
+
     STAssertEqualObjects(viewController.label.text, @"10.5", @"Error");
 }
 

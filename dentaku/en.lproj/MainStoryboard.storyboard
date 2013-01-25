@@ -44,7 +44,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clearButtonPressed:" destination="2" eventType="touchUpInside" id="8KF-ar-vHt"/>
+                                    <action selector="clearButtonPressed:" destination="2" eventType="touchUpInside" id="Ix4-Ph-wSc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s1b-P0-iDf">
@@ -274,6 +274,16 @@
             <point key="canvasLocation" x="274" y="124"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="equalButtonPressed:"/>
+                <relationship kind="action" name="numberButtonPressed:"/>
+                <relationship kind="action" name="optionButtonPressed:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
