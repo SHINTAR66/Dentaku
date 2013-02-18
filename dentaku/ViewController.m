@@ -15,7 +15,7 @@
 - (void)viewDidLoad // viewを呼び出して入力の開始
 {
     [super viewDidLoad];
-    startInput = YES;
+    startInput = YES; // 初期入力の宣言
 }
 
 
@@ -30,18 +30,18 @@
 
 - (IBAction)numberButtonPressed:(id)sender
 {
-    UIButton *b = (UIButton *)sender;
+    UIButton *button = (UIButton *)sender;
     if(startInput){
-        label.text = [NSString stringWithFormat:@"%d", b.tag];
+        label.text = [NSString stringWithFormat:@"%d", button.tag];
         startInput = NO;
-        if(b.tag == 10){
+        if(button.tag == 10){ // 0（初期状態）のときに小数点を表す.が入力された場合
             label.text = [NSString stringWithFormat:@"0."];
         }
     }else{
-        if(b.tag == 10){
+        if(button.tag == 10){ // 0以外のときに小数点を表す.が入力された場合.を表示し、それ以外では入力された数字を後ろに表示する
             label.text = [NSString stringWithFormat:@"%@.", label.text];
         }else{
-            label.text = [NSString stringWithFormat:@"%@%d", label.text, b.tag];
+            label.text = [NSString stringWithFormat:@"%@%d", label.text, button.tag];
         }
     }
 
@@ -67,9 +67,9 @@
 
 - (IBAction)optionButtonPressed:(id)sender
 {
-    UIButton *b = (UIButton *)sender;
+    UIButton *button = (UIButton *)sender; //ボタンのタグに応じて必要な演算子を扱う準備をする
     currentValue = [label.text floatValue];
-    operation = b.tag;
+    operation = button.tag;
     startInput = YES;
 }
 
